@@ -16,12 +16,12 @@ public class HealthBar : MonoBehaviour
 
     private void OnEnable()
     {
-        _life.LifeBar += StartChange;
+        _life.LifeBar += OnLifeBar;
     }
 
     private void OnDisable()
     {
-        _life.LifeBar -= StartChange;
+        _life.LifeBar -= OnLifeBar;
     }
 
     private void Start()
@@ -30,7 +30,7 @@ public class HealthBar : MonoBehaviour
         _slider.value = Mathf.Clamp(_slider.value, _minSliderValue, _maxSliderValue);
     }
 
-    public void StartChange(float targetValue)
+    public void OnLifeBar(float targetValue)
     {
         if(_changeHealth != null)
         {
