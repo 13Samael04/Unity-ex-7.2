@@ -24,6 +24,5 @@ public class Life : MonoBehaviour
         Health += cangeIndex;
         Health = Mathf.Clamp(Health, _minHealth, _maxHealth);
         LifeBar?.Invoke(Health);
-        print(Health);
     }
 }
